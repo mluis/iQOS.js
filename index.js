@@ -61,13 +61,15 @@ class iQOS {
         iqos.deviceReady = true;
         iqos.rawStatus = value.target.value;
         window.rawStatus = value.target.value;
-        let holderCharge = new Uint8Array(value.target.value.buffer.slice(-1))[0];
+        const rawData = new Uint8Array(value.target.value.buffer);
         if (value.target.value.buffer.byteLength == 7) {
-            iqos.holderCharge = holderCharge;
+            iqos.holderCharge = rawData[6];
+            iqos.chargerCharge = rawData[2];
         } else {
             iqos.holderCharge = false;
+            iqos.chargerCharge = rawData[2];
         }
         console.log("[iQOS]", 'holderCharge', holderCharge);
     }
 }
-// export default iQOS;
+export default iQOS;
