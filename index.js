@@ -5,7 +5,6 @@ class iQOS {
         this.chargerCharge = false;
         this.deviceReady = false;
         this.device = null;
-        this.servicesWeNeed = ["daebb240-b041-11e4-9e45-0002a5d5c51b"];
         //this.deviceStatus = {};
     }
     bootstrap() {
@@ -19,7 +18,7 @@ class iQOS {
         // Start Working With Device:
         navigator.bluetooth.requestDevice({
             acceptAllDevices: true,
-            optionalServices: this.servicesWeNeed
+            optionalServices: ["daebb240-b041-11e4-9e45-0002a5d5c51b"]
         }).then((device) => {
             console.log('[iQOS]', 'Connecting to GATT Server...');
             this.device = device;
