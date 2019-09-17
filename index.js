@@ -21,18 +21,16 @@ class iQOS {
             optionalServices: ["daebb240-b041-11e4-9e45-0002a5d5c51b"]
         }).then((device) => {
             console.log('[iQOS]', 'Connecting to GATT Server...');
-            this.device = device;
             return device.gatt.connect();
         }).then((server) => {
-            this.connected = true;
             console.log('[iQOS]', 'Getting Services...');
             return server.getPrimaryServices();
         }).then((services) => this.main(services)).catch(error => {
             console.log('[iQOS]', 'Argh! ' + error);
-            this.connected = false;
         });
     }
     main(services) {
+        this.connected = true;
         let queue = Promise.resolve();
         services.forEach(service => {
             queue = queue.then(_ => service.getCharacteristics().then(characteristics => {
