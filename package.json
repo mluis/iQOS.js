@@ -1,0 +1,10 @@
+{
+  "name": "@0x77/iqos",
+  "version": "0.0.0",
+  "description": "an iQOS library written in JavaScript to talk with iQOS over BLE.",
+  "main": "index.js",
+  "repository": "git@github.com:modmyiqos/iQOS.js.git",
+  "author": "Misha Marinenko <0x77dev@protonmail.com>",
+  "license": "GPL-3.0",
+  "private": false
+}
