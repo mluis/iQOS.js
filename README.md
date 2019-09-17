@@ -25,4 +25,13 @@ console.log(iqos.holderCharge);
 */
 console.log(iqos.chargerCharge);
 // It will return the percentage of Charger Charge.
+
+// To access the raw data of iQOS status you can use:
+console.log(iqos.rawStatus);
+
+// Check if device ready (to realtime data updates):
+console.log(iqos.deviceReady);
+
+// Check is it connected:
+console.log(iqos.connected);
 ```
