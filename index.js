@@ -81,4 +81,4 @@ class iQOS {
         console.log("[iQOS]", 'holderCharge', holderCharge);
     }
 }
-//export default iQOS;
+export default iQOS;
